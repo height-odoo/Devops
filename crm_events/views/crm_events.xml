@@ -1,0 +1,183 @@
+<odoo>
+
+    <record id="crm_lead_events" model="ir.ui.view">
+        <field name="name">crm.lead</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='lead']" position="after">
+                <page string="CRM Event">
+                     <group>
+                         <group>
+                             <field name="event_type_ids" widget="many2many_tags"/>
+                             <field name="event_goals_ids" widget="many2many_tags"/>
+                         </group>
+                         <group>
+                             <field name="feeling_ids" widget="many2many_tags"/>
+                             <field name="event_message_ids" widget="many2many_tags"/>
+                         </group>
+                     </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+
+    <record id="event_types_form" model="ir.ui.view">
+        <field name="name">event.types</field>
+        <field name="model">event.types</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="code" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="event_types_tree" model="ir.ui.view">
+        <field name="name">event.types</field>
+        <field name="model">event.types</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+    <record id="event_types_action" model="ir.actions.act_window">
+        <field name="name">Event Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.types</field>
+        <field name="view_mode">tree,form</field>
+    </record>=
+    <menuitem id="event_types_menu" name="Event Type"
+              parent="crm.crm_menu_config"
+              action="event_types_action"
+              sequence="2"/>
+
+    <record id="event_goals_form" model="ir.ui.view">
+        <field name="name">event.goals</field>
+        <field name="model">event.goals</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="code" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="event_goals_tree" model="ir.ui.view">
+        <field name="name">event.goals</field>
+        <field name="model">event.goals</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+    <record id="event_goals_action" model="ir.actions.act_window">
+        <field name="name">Event Goals</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.goals</field>
+        <field name="view_mode">tree,form</field>
+    </record>=
+    <menuitem id="event_goals_menu" name="Event Goals"
+              parent="crm.crm_menu_config"
+              action="event_goals_action"
+              sequence="3"/>
+
+    <record id="event_feeling_form" model="ir.ui.view">
+        <field name="name">event.feeling</field>
+        <field name="model">event.feeling</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="code" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="event_feeling_tree" model="ir.ui.view">
+        <field name="name">event.feeling</field>
+        <field name="model">event.feeling</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+    <record id="event_feeling_action" model="ir.actions.act_window">
+        <field name="name">Event Feeling</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.feeling</field>
+        <field name="view_mode">tree,form</field>
+    </record>=
+    <menuitem id="event_feeling_menu" name="Event Feeling"
+              parent="crm.crm_menu_config"
+              action="event_feeling_action"
+              sequence="4"/>
+
+    <record id="event_message_form" model="ir.ui.view">
+        <field name="name">event.message</field>
+        <field name="model">event.message</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                        </group>
+                        <group>
+                            <field name="code" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="event_message_tree" model="ir.ui.view">
+        <field name="name">event.message</field>
+        <field name="model">event.message</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+    <record id="event_message_action" model="ir.actions.act_window">
+        <field name="name">Event Message</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">event.message</field>
+        <field name="view_mode">tree,form</field>
+    </record>=
+    <menuitem id="event_message_menu" name="Event Message"
+              parent="crm.crm_menu_config"
+              action="event_message_action"
+              sequence="5"/>
+
+</odoo>

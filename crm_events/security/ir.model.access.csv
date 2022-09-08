@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crm_event_types,crm_events_types,model_event_types,base.group_user,1,1,1,1
+access_crm_event_goals,crm_events_goals,model_event_goals,base.group_user,1,1,1,1
+access_crm_event_feeling,crm_events_feeling,model_event_feeling,base.group_user,1,1,1,1
+access_crm_event_message,crm_message,model_event_message,base.group_user,1,1,1,1
