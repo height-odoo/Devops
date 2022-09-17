@@ -2,6 +2,7 @@
 from odoo import api, fields, models, _
 from odoo.exceptions import ValidationError
 
+
 class EventType(models.Model):
     _name = 'event.types'
 
